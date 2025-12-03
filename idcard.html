@@ -1,38 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ID Card Generator</title>
-  <link rel="stylesheet" href="cardd.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Card Generator</title>
+    <link rel="stylesheet" href="cardd.css">
 </head>
+
 <body>
-  <div class="container">
-
-    <!-- Form -->
-    <div id="formSection">
-      <h2>Student Information</h2>
-      <input type="text" id="name" placeholder="Full Name" required>
-      <input type="text" id="idNum" placeholder="Student ID" required>
-      <input type="text" id="course" placeholder="Course / Department" required>
-      <input type="file" id="photo" accept="image/*" required>
-      <button id="generateBtn">Generate ID Card</button>
-    </div>
-
-    <!-- ID Card (hidden at start) -->
-    <div id="idCard" class="hidden">
-      <div class="card">
-        <img id="cardPhoto" src="" alt="Photo">
-        <div class="info">
-          <h3>Student ID Card</h3>
-          <p><strong>Name:</strong> <span id="showName"></span></p>
-          <p><strong>ID No:</strong> <span id="showId"></span></p>
-          <p><strong>Course:</strong> <span id="showCourse"></span></p>
+    <div class="container">
+        <!-- Form Section -->
+        <div id="formSection">
+            <h2>Student Information</h2>
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="text" id="idNum" placeholder="Student ID" required>
+            <input type="text" id="course" placeholder="Course / Department" required>
+            <input type="file" id="photo" accept="image/*" required>
+            <button id="generateBtn">Generate ID Card</button>
         </div>
-      </div>
+
+        <!-- New Advanced ID Card (initially hidden) -->
+        <div id="idCard" class="hidden">
+            <div class="card">
+                <!-- Left Side - Info -->
+                <div class="left">
+                    <div class="card-info">
+                        <h2 id="displayName">Student Name</h2>
+                        <h3 id="displayRole">Student</h3>
+                        <p><span class="label">ID No:</span> <span id="displayId">123456</span></p>
+                        <p><span class="label">Course:</span> <span id="displayCourse">Computer Science</span></p>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon"><img
+                                    src="https://img.icons8.com/ios-filled/50/ffffff/facebook.png" alt="Facebook"></a>
+                            <a href="#" class="social-icon"><img
+                                    src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn"></a>
+                            <a href="#" class="social-icon"><img
+                                    src="https://img.icons8.com/ios-filled/50/ffffff/instagram.png" alt="Instagram"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Photo -->
+                <div class="right">
+                    <img id="cardPhoto" src="" alt="Student Photo">
+                </div>
+
+            </div>
+        </div>
     </div>
 
-  </div>
-  <script src="cardscript.js"></script>
+    <script src="cardscript.js"></script>
 </body>
+
 </html>
